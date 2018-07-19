@@ -178,13 +178,13 @@ def create_download_widget():
 
     # gets video thumbnail
     data = requests.get(yt.thumbnail_url).content
-    with open('<thumbnail_destination>', 'wb') as file: #destination path where youtube thumbnail will be downloaded
+    with open('<thumbnail_name>', 'wb') as file: #e.g.(C:\Users\mukes\Downloads\\file01.jpg)
         file.write(data)
 
     #displays video thumbnail
     thumb_label = Label(frame3)
     thumb_label.grid(row=0, column=0, rowspan=2, columnspan=2)
-    img = ImageTk.PhotoImage(Image.open("<thumbnail_name _along_with_path>"))
+    img = ImageTk.PhotoImage(Image.open("<thumbnail_name>")) #e.g.(C:\Users\mukes\Downloads\\file01.jpg)
     thumb_label.image = img
     thumb_label.configure(image=img)
 
